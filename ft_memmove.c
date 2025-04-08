@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:24:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/08 21:01:07 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/08 20:28:07 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/08 21:11:22 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_strlen(char *str)
 
 static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	i;
+	unsigned  int	i;
 	int	lg;
 
 	i = 0;
@@ -41,40 +41,30 @@ static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (lg);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	char		*d;
-	const char	*s;
+	size_t	i;
+	unsigned char	*d;
+	const	unsigned	char	*s;
+	char	temp[n];
 
 	i = 0;
-	d = (char *)dest;
-	s = (const char *)src;
-	/*while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}*/
-	ft_strlcpy(d, (char *)s, n);
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	ft_strlcpy(temp, (char *)s, (unsigned int)n + 1);
+	ft_strlcpy((char *)d, temp, (unsigned int)n + 1);
 	return (dest);
 }
 
 int	main(void)
 {
-	int	dest[100];
-	int	src[3] = {123, 2, 3};
-	size_t	n = 12;
-	int	i = 0;
-	int    dest2[100];
+	char    dest2[10];
+	char    *src = "holaquetal";
+	size_t  n = 9;
+	//char	dest[10];
 
-	ft_memcpy(dest, src, n);
-	memcpy(dest2, src, n);
-	while (i < 3)
-	{
-		printf("dest[%d] = %d\n", i, dest[i]);
-		printf("dest2[%d] = %d\n", i, dest2[i]);
-		i++;
-	}
-	//printf("dest2 = %s\n", dest2);
+	//ft_memmove(src + 1, src, n);
+	memmove(dest2, src, n);
+	printf("src + 1 = %s\n", src + 1);
+	printf("dest2 = %s\n", dest2);
 }
-
