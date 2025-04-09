@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 13:57:43 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 21:50:07 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/09 20:50:11 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/09 21:55:03 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include <limits.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (n > 0 && *s1 && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n == 0)
+	unsigned int	i;
+	char	*str;
+	char	*str2;
+
+	i = 0;
+	str = (char *)s1;
+	str2 = (char *)s2;
+	if (n > INT_MAX)
 		return (0);
-	return (*s1 - *s2);
+	while (i < (unsigned int)n)
+	{
+		if (str[i] != str2[i])
+			return (str[i] - str2[i]);
+		i++;
+	}
+	return (0);
 }
 /*
 int	main(void)
 {
-	char	*s1 = "asde";
-	char	*s2 = "asd";
-	int	result;
-	int	n = 10;
-
-	result = ft_strncmp(s1, s2, n);
-	printf("result = %d\n", result);
-	result = strncmp(s1, s2, n);
-	printf("result = %d\n", result);
-}
-*/
+	int	n = 34;
+	printf("s ft = %d\n", ft_memcmp("hoslaaa", "hoslaa", n));
+	printf("s = %d\n", memcmp("hoslaaa", "hoslaa", n));
+}*/

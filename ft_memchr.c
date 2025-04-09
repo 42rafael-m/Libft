@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 13:57:43 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 21:50:07 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/09 20:35:16 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/09 21:42:28 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (n > 0 && *s1 && (*s1 == *s2))
+	char	*str;
+	unsigned int	i;
+
+	i = 0;
+	str = (char *)s;
+	while (str[i] &&  i < (unsigned int)n)
 	{
-		s1++;
-		s2++;
-		n--;
+		if (str[i] == (char)c)
+			return ((void *)s + i);
+		i++;
 	}
-	if (n == 0)
-		return (0);
-	return (*s1 - *s2);
+	if (*str == (char)c)
+		return ((void *)s + i);
+	return (NULL);
 }
-/*
+
 int	main(void)
 {
-	char	*s1 = "asde";
-	char	*s2 = "asd";
-	int	result;
-	int	n = 10;
-
-	result = ft_strncmp(s1, s2, n);
-	printf("result = %d\n", result);
-	result = strncmp(s1, s2, n);
-	printf("result = %d\n", result);
+	printf("s ft = %p\n", ft_memchr("asdhasjf", '1', -9));
+	printf("s = %p\n", memchr("asdhasjf", '1', -9));
 }
-*/
