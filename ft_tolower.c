@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 12:26:32 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 20:02:07 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/09 20:13:34 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/09 20:15:55 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-static int	ft_strlen(char *str)
+int	tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	int	lg;
-
-	i = 0;
-	lg = ft_strlen(src);
-	while (i < (size - 1) && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (lg);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }

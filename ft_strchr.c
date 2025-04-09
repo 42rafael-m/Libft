@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 12:26:32 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 20:02:07 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/09 20:32:29 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
-static int	ft_strlen(char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (*s)
+	{
+		if (c == *s)
+			return ((char *)s);
+		s++;
+	}
+	if (c == *s)
+		return ((char *)s);
+	return (NULL);
 }
 
-unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	main(void)
 {
-	unsigned int	i;
-	int	lg;
+	int	c = 0;
 
-	i = 0;
-	lg = ft_strlen(src);
-	while (i < (size - 1) && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (lg);
+	printf("s ft = %p\n", ft_strchr("Holacsaa", c));
+	printf("s = %p\n", strchr("Holacsaa", c));
 }

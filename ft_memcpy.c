@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:24:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/08 21:01:07 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/09 20:03:08 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	lg = ft_strlen(src);
-	while (i < (size - 1))
+	while (i < (size - 1) && src[i])
 	{
 		dest[i] = src[i];
 		i++;
@@ -43,18 +43,11 @@ static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		i;
 	char		*d;
 	const char	*s;
 
-	i = 0;
 	d = (char *)dest;
 	s = (const char *)src;
-	/*while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}*/
 	ft_strlcpy(d, (char *)s, n);
 	return (dest);
 }
