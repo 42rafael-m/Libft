@@ -30,21 +30,21 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	lg = ft_strlen((char *)s);
+	while (*s)
+		s++;
 	while (lg > 0)
 	{
-		printf("s = %c, ", s[lg]);
+		printf("*s = %c, ", *s);
 		if (c == *s)
 			return ((char *)s);
 		lg--;
-		s = s + lg;
+		s--;
 	}
-	/*if (c == s[lg])
-		return ((char *)s);*/
 	return (NULL);
 }
 
 int	main(void)
 {
-	printf("s ft = %c\n", *ft_strrchr("Holacsaa", 'c'));
-	printf("s = %c\n", *strrchr("Holacsaa", 'c'));
+	printf("s ft = %c\n", *ft_strrchr("Holacsaa", 't'));
+	printf("s = %c\n", *strrchr("Holacsaa", 't'));
 }
