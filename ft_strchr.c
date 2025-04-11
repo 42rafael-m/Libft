@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 20:32:29 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:45:28 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
-	int	c = 0;
+	char	c = 's';
 
-	printf("s ft = %p\n", ft_strchr("Holacsaa", c));
-	printf("s = %p\n", strchr("Holacsaa", c));
-}
+	printf("s ft = %p\n", ft_strchr("Holac\0saa", c));
+	printf("s = %p\n", strchr("Holac\0saa", c));
+}*/
