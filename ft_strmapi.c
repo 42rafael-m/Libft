@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:21:20 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 13:55:12 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:00:40 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
+/*
 static char	to_uppercase_i(unsigned int index, char c)
 {
 	if (c >= 'a' && c <= 'z')
@@ -31,6 +31,7 @@ static char	to_uppercase_i(unsigned int index, char c)
 	}
 	return (c);
 }
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
