@@ -6,14 +6,24 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:24:45 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/08 19:26:06 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:37:21 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <ctype.h>
+
 int	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 30 && c <= 39))
-		return (1);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= '0' && c <= '9'))
+		return (8);
 	return (0);
 }
+/*
+int	main(void)
+{
+	char	c = '-';
+
+	printf("ft = %d\n", ft_isalnum(c));
+	printf("s = %d\n", isalnum(c));
+}*/

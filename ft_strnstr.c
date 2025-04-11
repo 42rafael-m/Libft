@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:59:47 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/11 17:00:35 by rafael-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
 
@@ -35,9 +47,10 @@ char *ft_strnstr(const char *haystack, const char *needle, int n)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	printf("s ft = %p\n", ft_strnstr("asdasdlad", "sdl", 3));
 	printf("s = %p\n", strstr("asdasdlad", "rtr"));
 }
+*/

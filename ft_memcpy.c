@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:24:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 20:03:08 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 19:18:46 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ static int	ft_strlen(char *str)
 	return (i);
 }
 
-static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
+static	unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	int	lg;
+	int				lg;
 
 	i = 0;
 	lg = ft_strlen(src);
-	while (i < (size - 1) && src[i])
+	while (i < (size - 1))
 	{
 		dest[i] = src[i];
 		i++;
@@ -51,23 +51,24 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	ft_strlcpy(d, (char *)s, n);
 	return (dest);
 }
-
+/*
 int	main(void)
 {
-	int	dest[100];
-	int	src[3] = {123, 2, 3};
+	char	dest[100];
+	char	src[12] = "a1sd\tfg\0as";
 	size_t	n = 12;
 	int	i = 0;
-	int    dest2[100];
+	char	dest2[100];
 
 	ft_memcpy(dest, src, n);
 	memcpy(dest2, src, n);
-	while (i < 3)
+	printf("dest = %p\n", dest);
+	printf("dest2 = %p\n", dest2);
+	while (i < (int)n)
 	{
 		printf("dest[%d] = %d\n", i, dest[i]);
 		printf("dest2[%d] = %d\n", i, dest2[i]);
 		i++;
 	}
-	//printf("dest2 = %s\n", dest2);
 }
-
+*/

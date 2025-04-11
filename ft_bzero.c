@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:38:06 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/08 20:20:30 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 18:57:30 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,17 @@ void	*ft_bzero(void *s, size_t n)
 /*
 int	main(void)
 {
-	size_t	n = 10;
+	size_t	n = 4;
 	char	*s;
 	char	*s2;
 
-	s = (char *)malloc(n * sizeof(int));
-	s2 = (char *)malloc(n * sizeof(int));
+	s = (char *)malloc(2 * sizeof(int));
+	s2 = (char *)malloc(2 * sizeof(int));
 	ft_bzero(s, n);
 	printf("s = %s\n", s);
 	bzero(s2, n);
 	printf("s2 = %s\n", s2);
 	free (s);
+	free (s2);
 }
 */

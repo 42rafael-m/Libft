@@ -6,13 +6,24 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:28:51 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/08 19:29:05 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:15:28 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <ctype.h>
 
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (1);
+		return (2048);
 	return (0);
 }
+/*
+int	main(void)
+{
+	char	c = '1';
+
+	printf("ft = %d\n", ft_isdigit(c));
+	printf("s = %d\n", isdigit(c));
+}*/
