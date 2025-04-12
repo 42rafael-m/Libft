@@ -6,11 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 12:23:57 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/07 12:25:20 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:19:07 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	int	i;
 

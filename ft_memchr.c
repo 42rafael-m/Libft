@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:35:16 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/09 21:42:28 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:07:36 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	unsigned int	i;
+	unsigned char	*str;
+	size_t	i;
 
 	i = 0;
-	str = (char *)s;
-	while (str[i] &&  i < (unsigned int)n)
+	str = (unsigned char *)s;
+	while (i < n)
 	{
-		if (str[i] == (char)c)
-			return ((void *)s + i);
+		if (str[i] == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
-	if (*str == (char)c)
-		return ((void *)s + i);
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
-	printf("s ft = %p\n", ft_memchr("asdhasjf", '1', -9));
-	printf("s = %p\n", memchr("asdhasjf", '1', -9));
-}
+	int	c = 'r';
+	char	s[] = "hola";
+//	int	s2[]= {-56, 5, 5};
+	size_t	n = -5;
+
+	printf("s ft = %p\n", ft_memchr(s, c, n));
+	printf("s = %p\n", memchr(s, c, n));
+}*/

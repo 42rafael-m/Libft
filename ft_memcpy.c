@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:24:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 19:18:46 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:25:23 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,55 +15,35 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-static	unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	int				lg;
-
-	i = 0;
-	lg = ft_strlen(src);
-	while (i < (size - 1))
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (lg);
-}
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
+	i = 0;
 	d = (char *)dest;
-	s = (const char *)src;
-	ft_strlcpy(d, (char *)s, n);
+	s = (const unsigned char *)src;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
 	return (dest);
 }
 /*
 int	main(void)
 {
 	char	dest[100];
-	char	src[12] = "a1sd\tfg\0as";
+	char	src[12] = {98, 67, 112, 49, 200, 98, 98, 98, 98, 98, 89, 98};
 	size_t	n = 12;
 	int	i = 0;
 	char	dest2[100];
 
 	ft_memcpy(dest, src, n);
 	memcpy(dest2, src, n);
-	printf("dest = %p\n", dest);
-	printf("dest2 = %p\n", dest2);
+	printf("dest = %s\n", dest);
+	printf("dest2 = %s\n", dest2);
 	while (i < (int)n)
 	{
 		printf("dest[%d] = %d\n", i, dest[i]);
