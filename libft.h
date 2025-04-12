@@ -6,12 +6,12 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:27:40 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 20:35:03 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 20:41:17 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
- #define LIBFT_H
+# define LIBFT_H
 
 int				ft_atoi(const char *str);
 void			*ft_bzero(void *s, size_t n);
