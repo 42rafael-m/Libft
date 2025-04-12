@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:28:07 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 17:02:16 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 20:25:14 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_strrlcpy(d, (char *)s, n + 1);
 	return (dest);
 }
-
+/*
 int	main(void)
 {
 	char    src[4] = {94, 87, 'w'};
@@ -94,4 +94,4 @@ int	main(void)
 		printf("dest2 = %c\n", dest2[i]);
 		i++;
 	}
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:35:16 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 16:07:36 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 20:25:41 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	str = (unsigned char *)s;
