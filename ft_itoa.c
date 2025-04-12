@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 12:32:11 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 19:17:22 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	ft_rev_char_tab(char *tab)
 	}
 }
 
-static int	ft_neg(int n)
+static int	ft_neg(long n)
 {
 	if (n < 0)
 	{
@@ -57,21 +57,22 @@ char	*ft_itoa(int n)
 	char	*r;
 	int		i;
 	int		neg;
+	long	nbr;
 
-	neg = ft_neg(n);
+	nbr = n;
+	neg = ft_neg(nbr);
 	i = 0;
 	r = (char *)malloc(12);
 	if (!r)
 		return (NULL);
 	if (neg)
-		n = n * (-1);
-	while (n > 9)
+		nbr = -nbr;
+	while (nbr > 9)
 	{
-		r[i] = (n % 10) + 48;
-		n = n / 10;
-		i++;
+		r[i++] = (nbr % 10) + 48;
+		nbr = nbr / 10;
 	}
-	r[i] = n + 48;
+	r[i] = nbr + 48;
 	if (neg)
 		r[++i] = '-';
 	r[++i] = '\0';
@@ -81,6 +82,6 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("ft = %s\n", ft_itoa(-123));
+	printf("ft = %s\n", ft_itoa(-2147483648));
 }
 */

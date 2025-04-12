@@ -6,14 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:21:20 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 14:00:40 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 19:30:49 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	int	i;
 
@@ -35,17 +35,18 @@ static char	to_uppercase_i(unsigned int index, char c)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
+	size_t	i;
+	size_t	lg;
 	char	*r;
 
 	i = 0;
-	r = (char *)malloc((ft_strlen((char *)s)) * sizeof(char));
+	lg = ft_strlen((char *)s);
+	r = (char *)malloc((ft_strlen((char *)s) + 1) * sizeof(char));
 	if (!r)
 		return (NULL);
-	while (i < ft_strlen((char *)s))
+	while (i < lg)
 	{
-		r[i] = f(0, s[i]);
-		printf("r[%d] = %c\n", i, r[i]);
+		r[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
 	r[i] = '\0';
@@ -54,6 +55,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 /*
 int	main(void)
 {
-	printf("ft_strmapi = %s\n", ft_strmapi("asdsad", to_uppercase_i));
+	char	*s;
+
+	s = ft_strmapi("asdasda", to_uppercase_i);
+	printf("ft_strmapi = %s\n", s);
+	free (s);
 }
-i*/
+*/
