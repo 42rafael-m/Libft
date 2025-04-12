@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:33:10 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/10 16:47:12 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:58:07 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,23 @@ static int	ft_strlen(char *str)
 char	*ft_strrchr(const char *s, int c)
 {
 	int	lg;
-	int	i;
 
-	i = 0;
 	lg = ft_strlen((char *)s);
-	while (*s)
-		s++;
-	while (lg > 0)
+	while (lg >= 0)
 	{
-		printf("*s = %c, ", *s);
-		if (c == *s)
-			return ((char *)s);
+		if ((char)c == s[lg])
+			return ((char *)&s[lg]);
 		lg--;
-		s--;
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
-	printf("s ft = %c\n", *ft_strrchr("Holacsaa", 't'));
-	printf("s = %c\n", *strrchr("Holacsaa", 't'));
-}
+	int	c = 'o';
+//	char	s[] = {'h', 'o', 'l', 'a'};
+	char	*s2 = "";
+
+	printf("s ft = %p\n", ft_strrchr(s2, c));
+	printf("s = %p\n", strrchr(s2, c));
+}*/

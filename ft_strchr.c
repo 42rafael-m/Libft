@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 20:45:28 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:58:42 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == *s)
+	if ((char)c == *s)
 		return ((char *)s);
 	return (NULL);
 }
