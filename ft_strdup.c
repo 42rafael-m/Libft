@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:40:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 18:04:53 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 18:09:16 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (lg);
 }
 
-static char	*ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	char	*dest;
 	int		size;

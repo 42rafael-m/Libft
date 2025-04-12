@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:24:28 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/10 21:41:59 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 18:53:59 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		lg1++;
 		i++;
 	}
-	result[lg1] = '\0';
+	result[i] = '\0';
 	return (result);
 }
-
+/*
 int	main(void)
 {
-	printf("ft = %s\n", ft_strtrim("12abcde2", "12"));
-}
+	char	*s;
+
+	s = ft_strtrim("12abcdef12", "2");
+	printf("ft = %s\n", s);
+	free (s);
+}*/
