@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:40:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/03/13 13:48:52 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/12 18:04:53 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	ft_strlen(char *str)
 static unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	int	lg;
+	size_t			lg;
 
 	i = 0;
 	lg = ft_strlen(src);
@@ -40,7 +40,7 @@ static unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (lg);
 }
 
-char	*ft_strdup(char *src)
+static char	*ft_strdup(char *src)
 {
 	char	*dest;
 	int		size;
@@ -51,19 +51,13 @@ char	*ft_strdup(char *src)
 	dest = (char *)malloc((size + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	ft_strlcpy(dest, src, size);
-	/*while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';*/
+	ft_strlcpy(dest, src, size + 1);
 	return (dest);
 }
-
+/*
 int	main(void)
 {
-	char	*str = "Holaquetal";
+	char	*str = "Hola\0quetal";
 	char	*result;
 	int	size;
 	char	*result2;
@@ -82,4 +76,4 @@ int	main(void)
 	free (result);
 	return (0);
 }
-
+*/
