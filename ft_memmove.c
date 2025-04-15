@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:28:07 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/15 15:05:23 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:14:08 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*
-static size_t	ft_strlen(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-static unsigned	int	ft_strlcpy(char *dest, char *src, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (i < (size - 1))
-	{
-		dest[i] = src[i];
-		printf("dest[%ld] = %c\n", i, dest[i]);
-		i++;
-	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
-}
-
-static unsigned int	ft_strrlcpy(char *dest, char *src, size_t size)
-{
-	size_t	i;
-	size_t	lg;
-
-	lg = ft_strlen(src);
-	i = 0;
-	if (size == 0)
-		return (lg);
-	if (size > lg + 1)
-		size = lg + 1;
-	i = size - 1;
-	dest[i] = '\0';
-	while (i > 0)
-	{
-		i--;
-		dest[i] = src[i];
-	}
-	return (lg);
-}
-*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
