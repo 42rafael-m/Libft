@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 14:58:42 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:46:24 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,15 @@ static char	*ft_strchr(const char *s, int c)
 
 static char	*ft_empty(char const *s1, char const *s2)
 {
-	int		i;
 	char	*result;
 
-	i = 0;
 	if (!s1)
 	{
-		result = (char *)malloc(1 * sizeof(char));
-		result[0] = '\0';
+		result = (char *)malloc(1);
 		return (result);
 	}
 	if (!s2)
-	{
-		result = (char *)malloc(ft_strlen(s1) + 1);
-		if (!result)
-			return (NULL);
-		while (s1[i])
-		{
-			result[i] = (char)s1[i];
-			i++;
-		}
-		result[i] = '\0';
-		return (result);
-	}
+		return ((char *)s1);
 	return (NULL);
 }
 
@@ -73,8 +59,8 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	lg = ft_strlen((char *)s);
-	if (start >= lg)
-		return (malloc(1 * sizeof(char)));
+	if (start >= len)
+		return (ft_empty("", ""));
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -95,7 +81,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	end = ft_strlen(s1);
 	start = 0;
-	if (ft_strlen(s1) == 0 || ft_strlen(set) == 0)
+	if (!s1 || !set)
 		return (ft_empty(s1, set));
 	while (s1[start])
 	{
@@ -109,7 +95,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 		end--;
 	}
-	result = malloc((end + 1) * sizeof(char));
 	result = ft_substr(s1, start, end - start + 1);
 	return (result);
 }
@@ -147,4 +132,7 @@ int     main(void)
 	r = ft_strtrim(s, "");
         printf("ft7 = %s\n", r);
         free (r);
+//	r = ft_strtrim("xxxz  test with x and z and x .  zx  xx z", "z x");
+//	printf("ft8 = %s\n", r);
+//        free (r);
 }*/

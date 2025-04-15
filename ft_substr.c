@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:12 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 18:30:45 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:41:27 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	lg = ft_strlen((char *)s);
-	if (start >= lg)
+	if (start >= len)
 		return (malloc(1 * sizeof(char)));
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
@@ -50,7 +50,7 @@ int	main(void)
 {
 	char	*result;
 
-	result = ft_substr("hola", 4294967295, 0);
+	result = ft_substr("hola", -12312312312, 0);
 	printf("result = %s\n", result);
 	free (result);
 }*/

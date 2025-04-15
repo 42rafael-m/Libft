@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/15 15:38:07 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:47:04 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 //	char	c = 'e';
@@ -33,4 +33,4 @@ int	main(void)
 
 	printf("s ft = %p\n", ft_strchr(s, 't' + 256));
 	printf("*s = %p\n", strchr(s, 't' + 256));
-}
+}*/
