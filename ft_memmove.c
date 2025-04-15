@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 20:28:07 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 20:25:14 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:05:23 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+/*
 static size_t	ft_strlen(char *str)
 {
 	int	i;
@@ -35,6 +35,7 @@ static unsigned	int	ft_strlcpy(char *dest, char *src, size_t size)
 	while (i < (size - 1))
 	{
 		dest[i] = src[i];
+		printf("dest[%ld] = %c\n", i, dest[i]);
 		i++;
 	}
 	dest[i] = '\0';
@@ -61,37 +62,75 @@ static unsigned int	ft_strrlcpy(char *dest, char *src, size_t size)
 	}
 	return (lg);
 }
-
+*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
+	unsigned char		*d;
+	unsigned const char	*s;
 
-	d = (char *)dest;
-	s = (const char *)src;
+	d = (unsigned char *)dest;
+	s = (unsigned const char *)src;
 	if (d == s || n == 0)
 		return (dest);
 	if (d < s)
-		ft_strlcpy(d, (char *)s, n + 1);
+	{
+		while (n--)
+			*d++ = *s++;
+	}
 	else
-		ft_strrlcpy(d, (char *)s, n + 1);
+	{
+		d = d + n;
+		s = s + n;
+		while (n--)
+			*--d = *--s;
+	}
 	return (dest);
 }
 /*
 int	main(void)
 {
-	char    src[4] = {94, 87, 'w'};
-	size_t  n = 4;
-	char	dest[n];
-	char    dest2[n];
-	int	i = 0;
+	size_t  n = 5;
+//	char	*dest;
+//	char    *dest2;
+	char	src[] = "lorem ipsum dolor sit amet";
+	char    src2[] = "lorem ipsum dolor sit amet";
 
-	ft_memmove(src, src + 2, n);
-	memmove(src, src + 2, n);
-	while (i < 4)
-	{
-		printf("dest = %c\n", dest[i]);
-		printf("dest2 = %c\n", dest2[i]);
-		i++;
-	}
+
+	ft_memmove(src, "consectetur", n);
+	memmove(src2, "consectetur", n);
+	printf("dest = %s\n", src);
+	printf("dest2 = %s\n", src2);
+
+	n = 10;
+	dest = src + 1;
+        dest2 = src + 1;
+	src = "con\0sec\0\0te\0tur";
+	ft_memmove(dest, src, n);
+        memmove(dest2, src, n);
+	printf("dest = %s\n", dest);
+        printf("dest2 = %s\n", dest2);
+
+	n = 8;
+	dest = src + 1;
+        dest2 = src + 1;
+	src = "lorem ipsum dolor sit amet";
+	ft_memmove(dest, src, n);
+        memmove(dest2, src, n);
+	printf("dest = %s\n", dest);
+        printf("dest2 = %s\n", dest2);
+
+	n = 27;
+	dest = src + 1;
+        dest2 = src + 1;
+	ft_memmove(dest, src, n);
+        memmove(dest2, src, n);
+	printf("dest = %s\n", dest);
+        printf("dest2 = %s\n", dest2);
+
+	n = 27;
+	dest = src + 1;
+        dest2 = src + 1;
+	ft_memmove("", src, n);
+	printf("dest = %s\n", dest);
+	printf("dest2 = %p\n", memmove("", src, n));
 }*/

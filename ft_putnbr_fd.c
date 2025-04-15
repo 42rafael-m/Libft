@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nbr > 9)
 		ft_putnbr_fd(n / 10, fd);
 	nbr = (n % 10) + 48;
-	write (fd, &nbr, sizeof(n));
+	write (fd, &nbr, 1);
 }
 /*
 int	main(void)

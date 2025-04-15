@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
+
 int				ft_atoi(const char *str);
 void			*ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
@@ -38,7 +40,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strjoin(char const *s1, char const *s2);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-size_t			ft_strlen(char *str);
+size_t			ft_strlen(const char *str);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t n);

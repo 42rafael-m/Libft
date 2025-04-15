@@ -28,8 +28,8 @@ char	*ft_strchr(const char *s, int c)
 /*
 int	main(void)
 {
-	char	c = 's';
+	char	c = 'e';
 
-	printf("s ft = %p\n", ft_strchr("Holac\0saa", c));
-	printf("s = %p\n", strchr("Holac\0saa", c));
+	printf("s ft = %p\n", ft_strchr("Teste", c));
+	printf("s = %p\n", strchr("Teste", c));
 }*/

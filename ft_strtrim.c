@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 16:24:28 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 18:53:59 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/12 14:58:42 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	ft_strlen(char *str)
+static size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -23,65 +24,127 @@ static int	ft_strlen(char *str)
 	return (i);
 }
 
-static char	*ft_modstrncmp(char *s1, char *s2, unsigned int n)
+static char	*ft_strchr(const char *s, int c)
 {
-	while (n > 0 && *s1 && (*s1 == *s2))
+	while (*s)
 	{
-		s1++;
-		s2++;
-		n--;
+		if (c == *s)
+			return ((char *)s);
+		s++;
 	}
-	return (s1);
+	if ((char)c == *s)
+		return ((char *)s);
+	return (NULL);
 }
 
-static char	*ft_modstrrncmp(char *s1, char *s2, unsigned int n)
+static char	*ft_empty(char const *s1, char const *s2)
 {
-	while (*s2)
-		s2++;
-	s2--;
-	while (*s1)
-		s1++;
-	s1--;
-	while (n > 0 && (*s1 == *s2))
-	{
-		s1--;
-		s2--;
-		n--;
-	}
-	return (++s1);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*result;
-	int		lg1;
-	int		lg2;
 	int		i;
+	char	*result;
 
 	i = 0;
-	lg1 = ft_strlen((char *)set);
-	lg2 = ft_modstrrncmp((char *)s1, (char *)set, lg1)
-		- ft_modstrncmp((char *)s1, (char *)set, lg1);
-	result = (char *)malloc((lg2 + 1) * sizeof(char));
-	if (!(result))
-		return (NULL);
-	lg1 = ft_modstrncmp((char *)s1, (char *)set, lg1) - &s1[0];
-	lg2 = lg1 + lg2;
-	while (lg1 < lg2)
+	if (!s1)
 	{
-		result[i] = s1[lg1];
-		lg1++;
+		result = (char *)malloc(1 * sizeof(char));
+		result[0] = '\0';
+		return (result);
+	}
+	if (!s2)
+	{
+		result = (char *)malloc(ft_strlen(s1) + 1);
+		if (!result)
+			return (NULL);
+		while (s1[i])
+		{
+			result[i] = (char)s1[i];
+			i++;
+		}
+		result[i] = '\0';
+		return (result);
+	}
+	return (NULL);
+}
+
+static char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*result;
+	size_t	i;
+	size_t	lg;
+
+	i = 0;
+	lg = ft_strlen((char *)s);
+	if (start >= lg)
+		return (malloc(1 * sizeof(char)));
+	result = malloc((len + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	while (i < len)
+	{
+		result[i] = s[start + i];
 		i++;
 	}
 	result[i] = '\0';
 	return (result);
 }
-/*
-int	main(void)
-{
-	char	*s;
 
-	s = ft_strtrim("12abcdef12", "2");
-	printf("ft = %s\n", s);
-	free (s);
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	unsigned int	start;
+	size_t			end;
+	char			*result;
+
+	end = ft_strlen(s1);
+	start = 0;
+	if (ft_strlen(s1) == 0 || ft_strlen(set) == 0)
+		return (ft_empty(s1, set));
+	while (s1[start])
+	{
+		if (!ft_strchr(set, s1[start]))
+			break ;
+		start++;
+	}
+	while (end > 0)
+	{
+		if (!ft_strchr(set, s1[end]))
+			break ;
+		end--;
+	}
+	result = malloc((end + 1) * sizeof(char));
+	result = ft_substr(s1, start, end - start + 1);
+	return (result);
+}
+/*
+int     main(void)
+{
+	char    *s = "lorem ipsum dolor sit amet";
+	char    *s1 = "lorem \n ipsum \t dolor \n sit \t amet";
+	char    *s2 = " lorem ipsum dolor sit amet";
+	char    *s3 = "       ";
+	char    *set = " ";
+	char    *set1 = "te";
+	char    *set2 = " l";
+	char    *set3 = "tel";
+	char    *r = NULL;
+
+	r = ft_strtrim(s1, set);
+	printf("ft1 = %s\n", r);
+	free (r);
+	r = ft_strtrim(s, set1);
+	printf("ft2 = %s\n", r);
+	free (r);
+	r = ft_strtrim(s2, set2);
+	printf("ft3 = %s\n", r);
+	free (r);
+	r = ft_strtrim(s, set3);
+	printf("ft4 = %s\n", r);
+	free (r);
+	r = ft_strtrim(s3, set);
+	printf("ft5 = %s\n", r);
+	free (r);
+	r = ft_strtrim("", "");
+        printf("ft6 = %s\n", r);
+        free (r);
+	r = ft_strtrim(s, "");
+        printf("ft7 = %s\n", r);
+        free (r);
 }*/

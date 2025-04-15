@@ -11,17 +11,17 @@ SRC = ft_atoi.c ft_isascii.c ft_memcmp.c \
       ft_toupper.c ft_isalpha.c ft_memchr.c \
       ft_putchar_fd.c ft_strchr.c ft_strlcpy.c \
       ft_strrchr.c
-CC = cc
+CLANG = clang
 OBJ = $(SRC:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
-AR = ar rcs
+AR = ar rsc
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CLANG) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJ)
 fclean: clean

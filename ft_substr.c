@@ -50,7 +50,7 @@ int	main(void)
 {
 	char	*result;
 
-	result = ft_substr("123456789", -3, -120);
+	result = ft_substr("hola", 4294967295, 0);
 	printf("result = %s\n", result);
 	free (result);
 }*/

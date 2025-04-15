@@ -15,71 +15,91 @@
 #include <string.h>
 #include <unistd.h>
 
-static char	*ft_strcopy_from(char *str, char *result, char charset, int depth)
+static size_t	ft_strlen(char *str)
 {
-	int	count;
 	int	i;
-	int	k;
 
-	count = 0;
 	i = 0;
-	k = 0;
 	while (str[i])
-	{
-		if (str[i] == charset)
-		{
-			count++;
-			i++;
-		}
-		if (count == depth)
-		{
-			result[k] = str[i];
-			k++;
-		}
 		i++;
+	return (i);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*result;
+	size_t	i;
+	size_t	lg;
+
+	i = -1;
+	lg = ft_strlen((char *)s);
+	if (start >= lg)
+	{
+		result = malloc(1 * sizeof(char));
+		if (!(result))
+			return (NULL);
+		result[0] = '\0';
+		return (result);
 	}
-	result[k] = '\0';
+	if (len > lg - start)
+		len = lg - start;
+	result = malloc((len + 1) * sizeof(char));
+	if (!(result))
+		return (NULL);
+	while (++i < len)
+		result[i] = s[start + i];
+	result[i] = '\0';
 	return (result);
 }
 
-static char	*ft_sep_lines(char *str, int depth, char *result, char charset)
+static char	*ft_sep_lines(char *str, int depth, char charset)
 {
 	int	count;
 	int	i;
-	int	lg;
+	int	start;
 
 	count = 0;
 	i = 0;
-	lg = 0;
 	while (str[i])
 	{
-		if (str[i] == charset)
-			count++;
+		while (str[i] == charset)
+			i++;
+		if (!str[i])
+			break ;
 		if (count == depth)
-			lg++;
-		i++;
+		{
+			start = i;
+			while (str[i] && str[i] != charset)
+				i++;
+			return (ft_substr(str, start, i - start));
+		}
+		while (str[i] && str[i] != charset)
+			i++;
+		count++;
 	}
-	result = (char *)malloc((lg + 1) * sizeof(char));
-	if (!result)
-	{
-		free (result);
-		return (NULL);
-	}
-	result = ft_strcopy_from(str, result, charset, depth);
-	return (result);
+	return (NULL);
 }
 
 static int	ft_depth(char *str, char charset)
 {
 	int	depth;
+	int	word;
 	int	i;
+	int	lg;
 
 	i = 0;
-	depth = 1;
-	while (str[i])
+	lg = ft_strlen(str);
+	depth = 0;
+	word = 0;
+	while (i < lg)
 	{
-		if (str[i] == charset)
+		if (str[i] != charset && !word)
+		{
+			word = 1;
 			depth++;
+		}
+		if (str[i] == charset)
+			word = 0;
 		i++;
 	}
 	return (depth);
@@ -92,33 +112,35 @@ char	**ft_split(char *str, char charset)
 	int		i;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	depth = ft_depth(str, charset);
 	result = (char **)malloc((depth + 1) * sizeof(char *));
 	if (!result)
-	{
-		free (result);
 		return (NULL);
-	}
 	while (i < depth)
 	{
-		result[i] = ft_sep_lines(str, i, result[i], charset);
+		result[i] = ft_sep_lines(str, i, charset);
+		if (!result[i])
+		{
+			while (i-- > 0)
+				free(result[i]);
+			free(result);
+			return (NULL);
+		}
 		i++;
 	}
 	result[depth] = NULL;
 	return (result);
 }
 /*
-int	main(int argc, char **argv)
+int main(void)
 {
-	char	**result;
 	int	i = 0;
+	char	**result = ft_split("   lorem   ipsum Suspendisse   ", ' ');
 
-	if (argc != 3)
-	{
-		write(2, "Error!", 7);
+	if (!result)
 		return (1);
-	}
-	result = ft_split(argv[1], argv[2][0]);
 	while (result[i])
 	{
 		printf("result[%d] = %s\n", i, result[i]);
@@ -127,9 +149,11 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (result[i])
 	{
-		free(result[i]);i++;
+		free(result[i]);
+		i++;
 	}
+//	printf("depth = %d\n", depth);
+	free (result[i]);
 	free(result);
 	return (0);
-}
-*/
+}*/
