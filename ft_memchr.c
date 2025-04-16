@@ -6,10 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:35:16 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 17:47:11 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:32:27 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 /*
 #include <string.h>
 #include <stdio.h>

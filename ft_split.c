@@ -6,51 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:34:44 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 19:04:47 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:22:22 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
-#include <unistd.h>
-
-static size_t	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*result;
-	size_t	i;
-	size_t	lg;
-
-	i = -1;
-	lg = ft_strlen((char *)s);
-	if (start >= lg)
-	{
-		result = malloc(1 * sizeof(char));
-		if (!(result))
-			return (NULL);
-		result[0] = '\0';
-		return (result);
-	}
-	if (len > lg - start)
-		len = lg - start;
-	result = malloc((len + 1) * sizeof(char));
-	if (!(result))
-		return (NULL);
-	while (++i < len)
-		result[i] = s[start + i];
-	result[i] = '\0';
-	return (result);
-}
+#include <stdio.h>
 
 static char	*ft_sep_lines(char *str, int depth, char charset)
 {
@@ -84,23 +47,19 @@ static int	ft_depth(char *str, char charset)
 {
 	int	depth;
 	int	word;
-	int	i;
-	int	lg;
 
-	i = 0;
-	lg = ft_strlen(str);
 	depth = 0;
 	word = 0;
-	while (i < lg)
+	while (*str)
 	{
-		if (str[i] != charset && !word)
+		if (*str != charset && !word)
 		{
-			word = 1;
 			depth++;
+			word = 1;
 		}
-		if (str[i] == charset)
+		if (*str == charset)
 			word = 0;
-		i++;
+		str++;
 	}
 	return (depth);
 }
@@ -134,7 +93,7 @@ char	**ft_split(char *str, char charset)
 	return (result);
 }
 /*
-int main(void)
+int	main(void)
 {
 	int	i = 0;
 	char	**result = ft_split("   lorem   ipsum Suspendisse   ", ' ');

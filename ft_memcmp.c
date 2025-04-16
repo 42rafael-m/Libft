@@ -6,13 +6,12 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:50:11 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 17:49:45 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:54:17 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <string.h>
-#include <stdio.h>
+#include <stddef.h>
+/*#include <stdio.h>
 
 The  memcmp() function compares the first n bytes (each interpreted as unsigned
 char) of the memory areas s1 and s2.

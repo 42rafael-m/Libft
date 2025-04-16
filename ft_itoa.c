@@ -6,24 +6,21 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 19:17:22 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 21:06:20 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
+/*
+Utilizando malloc(3), genera una string que represente el valor entero recibido
+como argumento. Los números negativos tienen que gestionarse.
 
-static int	ft_strlen(char *str)
-{
-	int	lg;
-
-	lg = 0;
-	while (str[lg] != '\0')
-	{
-		++lg;
-	}
-	return (lg);
-}
+RETURN
+La string que represente el número. NULL si falla la reserva de memoria.
+*/
 
 static void	ft_rev_char_tab(char *tab)
 {
@@ -60,9 +57,9 @@ char	*ft_itoa(int n)
 	long	nbr;
 
 	nbr = n;
-	neg = ft_neg(nbr);
 	i = 0;
-	r = (char *)malloc(12);
+	neg = ft_neg(nbr);
+	r = (char *)malloc(12 * sizeof(char));
 	if (!r)
 		return (NULL);
 	if (neg)
@@ -82,6 +79,8 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("ft = %s\n", ft_itoa(-2147483648));
+	char	*r = ft_itoa("");
+	printf("ft = %s\n", r);
+	free (r);
 }
 */

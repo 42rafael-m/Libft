@@ -6,13 +6,13 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:40:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 18:05:59 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:52:24 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h>
+/*#include <stdio.h>
 #include <string.h>
 
 The  strdup()  function  returns  a pointer to a new string which is a
@@ -27,7 +27,7 @@ indicate the cause of the error.
 
 char	*ft_strdup(char *src)
 {
-	char	*dest;
+	char		*dest;
 	size_t		size;
 
 	size = ft_strlen(src);

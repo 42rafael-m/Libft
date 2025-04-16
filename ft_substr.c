@@ -6,23 +6,21 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:12 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/15 16:41:27 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 20:21:19 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
-static size_t	ft_strlen(char *str)
-{
-	int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+/*Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
+La substring empieza desde el índice ’start’ y tiene una longitud máxima ’len’.
+
+RETURN
+La substring resultante. NULL si falla la reserva de memoria.
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -32,8 +30,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	lg = ft_strlen((char *)s);
-	if (start >= len)
-		return (malloc(1 * sizeof(char)));
+	if (start > lg)
+		return (result = ft_calloc(1, 1));
+	if (len > lg - start)
+		len = lg - start;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -50,7 +50,7 @@ int	main(void)
 {
 	char	*result;
 
-	result = ft_substr("hola", -12312312312, 0);
+	result = ft_substr("1", 42, 42000);
 	printf("result = %s\n", result);
 	free (result);
 }*/

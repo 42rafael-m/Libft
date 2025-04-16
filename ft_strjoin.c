@@ -6,39 +6,22 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:59:52 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 18:43:26 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:40:58 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
+/*#include <stdio.h>
 
-static int	ft_strlen(char *str)
-{
-	int	lg;
+Reserva (con malloc(3)) y devuelve una nueva
+string, formada por la concatenación de ’s1’ y
+’s2’.
 
-	lg = 0;
-	while (str[lg])
-		lg++;
-	return (lg);
-}
-
-static unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	int				lg;
-
-	i = 0;
-	lg = ft_strlen(src);
-	while (i < (size - 1) && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (lg);
-}
+RETURN
+La nueva string. NULL si falla la reserva de memoria.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -65,9 +48,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 /*
 int	main(void)
 {
-	char	*s;
+	char	s[] = {'3', 12312312312312123, -1231, 'a', 'b', 'c'};
+	char    s2[] = {99, 120, 49};
+	char	*r;
 
-	s = ft_strjoin("123","");
-	printf("ft = %s\n", s);
-	free (s);
+	r = ft_strjoin(s,s2);
+	printf("ft = %s\n", r);
 }*/

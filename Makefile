@@ -14,7 +14,7 @@ SRC = ft_atoi.c ft_isascii.c ft_memcmp.c \
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 	ft_lstclear.c ft_lstiter.c ft_lstmap.c
-CLANG = clang
+CC = cc
 OBJ = $(SRC:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
 AR = ar rsc
@@ -26,7 +26,7 @@ bonus:
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
-	$(CLANG) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJ)
 fclean: clean

@@ -6,16 +6,15 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:50:47 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 17:59:06 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:31:40 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
-/*
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
+/*
+#include <stdio.h>
 
 The  calloc() function allocates memory for an array of nmemb elements of size
 bytes each and returns a pointer to the allocated memory.  The memory is set to

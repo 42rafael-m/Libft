@@ -6,71 +6,35 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/15 16:46:24 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 19:27:19 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-#include <stdio.h>
 #include <stdlib.h>
+/*
+#include <stdio.h>
 
-static size_t	ft_strlen(const char *str)
-{
-	int	i;
+Elimina todos los caracteres de la string ’set’ desde el principio y desde el
+final de ’s1’, hasta encontrar un caracter no perteneciente a ’set’. La string
+resultante se devuelve con una reserva de malloc(3)
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-static char	*ft_strchr(const char *s, int c)
-{
-	while (*s)
-	{
-		if (c == *s)
-			return ((char *)s);
-		s++;
-	}
-	if ((char)c == *s)
-		return ((char *)s);
-	return (NULL);
-}
-
+RETURN
+La string recortada. NULL si falla la reserva de memoria.
+*/
 static char	*ft_empty(char const *s1, char const *s2)
 {
 	char	*result;
 
 	if (!s1)
 	{
-		result = (char *)malloc(1);
+		result = (char *)ft_calloc(1, 1);
 		return (result);
 	}
 	if (!s2)
 		return ((char *)s1);
 	return (NULL);
-}
-
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*result;
-	size_t	i;
-	size_t	lg;
-
-	i = 0;
-	lg = ft_strlen((char *)s);
-	if (start >= len)
-		return (ft_empty("", ""));
-	result = malloc((len + 1) * sizeof(char));
-	if (!result)
-		return (NULL);
-	while (i < len)
-	{
-		result[i] = s[start + i];
-		i++;
-	}
-	result[i] = '\0';
-	return (result);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -102,7 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 int     main(void)
 {
 	char    *s = "lorem ipsum dolor sit amet";
-	char    *s1 = "lorem \n ipsum \t dolor \n sit \t amet";
+//	char    *s1 = "lorem \n ipsum \t dolor \n sit \t amet";
 	char    *s2 = " lorem ipsum dolor sit amet";
 	char    *s3 = "       ";
 	char    *set = " ";
@@ -111,7 +75,7 @@ int     main(void)
 	char    *set3 = "tel";
 	char    *r = NULL;
 
-	r = ft_strtrim(s1, set);
+	r = ft_strtrim("   xxx   xxx", " x");
 	printf("ft1 = %s\n", r);
 	free (r);
 	r = ft_strtrim(s, set1);
@@ -132,7 +96,7 @@ int     main(void)
 	r = ft_strtrim(s, "");
         printf("ft7 = %s\n", r);
         free (r);
-//	r = ft_strtrim("xxxz  test with x and z and x .  zx  xx z", "z x");
-//	printf("ft8 = %s\n", r);
-//        free (r);
+	r = ft_strtrim("xxxz  test with x and z and x .  zx  xx z", "z x");
+	printf("ft8 = %s\n", r);
+	free (r);
 }*/
