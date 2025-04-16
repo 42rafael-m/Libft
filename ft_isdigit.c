@@ -6,12 +6,15 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:28:51 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 17:15:28 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:16:29 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include <stdio.h>
 #include <ctype.h>
+
+ checks for a digit (0 through 9). */
 
 int	ft_isdigit(int c)
 {

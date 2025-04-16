@@ -11,12 +11,17 @@ SRC = ft_atoi.c ft_isascii.c ft_memcmp.c \
       ft_toupper.c ft_isalpha.c ft_memchr.c \
       ft_putchar_fd.c ft_strchr.c ft_strlcpy.c \
       ft_strrchr.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+	ft_lstclear.c ft_lstiter.c ft_lstmap.c
 CLANG = clang
 OBJ = $(SRC:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
 AR = ar rsc
 
 all: $(NAME)
+
+bonus: 
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)

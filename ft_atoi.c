@@ -6,13 +6,25 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:28:02 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 17:36:02 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:54:30 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+The  atoi()  function  converts the initial portion of the string pointed to by
+nptr to int.  The behavior is the same as
+
+           strtol(nptr, NULL, 10);
+
+except that atoi() does not detect errors.
+
+RETURN VALUE
+       The converted value or 0 on error.
+*/
 
 int	ft_atoi(const char *str)
 {

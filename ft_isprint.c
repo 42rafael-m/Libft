@@ -6,12 +6,15 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:28:13 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 17:48:35 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:17:37 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include <stdio.h>
 #include <ctype.h>
+
+ checks for any printable character including space. */
 
 int	ft_isprint(int c)
 {
@@ -22,7 +25,7 @@ int	ft_isprint(int c)
 /*
 int	main(void)
 {
-	char	c = 1;
+	int	c = 98;
 
 	printf("ft = %d\n", ft_isprint(c));
 	printf("s = %d\n", isprint(c));

@@ -6,44 +6,29 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:40:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 18:09:16 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:05:59 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+/*#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-static size_t	ft_strlen(char *str)
-{
-	int	i;
+The  strdup()  function  returns  a pointer to a new string which is a
+duplicate of the string s. Memory for the new string is obtained with
+malloc(3), and can be freed with free(3).
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-static unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	size_t			lg;
-
-	i = 0;
-	lg = ft_strlen(src);
-	while (i < (size - 1) && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (lg);
-}
+RETURN VALUE
+On success, the strdup() function returns a pointer to the duplicated string.
+It returns NULL if insufficient memory was available, with errno set to
+indicate the cause of the error.
+*/
 
 char	*ft_strdup(char *src)
 {
 	char	*dest;
-	int		size;
+	size_t		size;
 
 	size = ft_strlen(src);
 	dest = (char *)malloc((size + 1) * sizeof(char));

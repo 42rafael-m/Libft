@@ -6,12 +6,16 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/11 17:45:19 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:17:18 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include <stdio.h>
 #include <ctype.h>
+
+ checks whether c is a 7-bit unsigned char value
+ * that fits into the ASCII character set. */
 
 int	ft_isascii(int c)
 {
@@ -22,7 +26,7 @@ int	ft_isascii(int c)
 /*
 int	main(void)
 {
-	unsigned char c = 0xE9;
+	int c = -123123;
 
 	printf("ft = %d\n", ft_isascii(c));
 	printf("s = %d\n", isascii(c));
