@@ -11,24 +11,25 @@ SRC = ft_atoi.c ft_isascii.c ft_memcmp.c \
       ft_toupper.c ft_isalpha.c ft_memchr.c \
       ft_putchar_fd.c ft_strchr.c ft_strlcpy.c \
       ft_strrchr.c
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-	ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_SRC = ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstclear_bonus.c\
+	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstnew_bonus.c\
+	ft_lstdelone_bonus.c ft_lstiter_bonus.c
 CC = cc
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
 AR = ar rsc
 
 all: $(NAME)
 
-bonus: 
-
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 fclean: clean
 	rm -f $(NAME)
-re: fclean $(NAME)
+re: fclean all
