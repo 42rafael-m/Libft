@@ -6,14 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:05:46 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 18:49:04 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/18 19:08:24 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
-/*
+/*#include <stdio.h>
+
 Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’ se
 inicializa con el contenido del parámetro ’content’. La variable ’next’,
 con NULL.
@@ -26,8 +26,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	if (!content)
-		return (NULL);
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
@@ -39,12 +37,18 @@ t_list	*ft_lstnew(void *content)
 int	main(void)
 {
 //	char	*content = NULL;
-	t_list	*newnode;
+	t_list	*new_node;
 //	char	*s;
 
 //	printf("content = %p\n", content);
-	newnode = ft_lstnew(NULL);
-//	s = newnode -> content;
+	new_node = ft_lstnew(NULL);
+	if (!(new_node -> content))
+		printf("NULL");
+	if (!(new_node -> next))
+		printf("NULL");
+	free (new_node -> content);
+	free (new_node);
+//	s = new_node -> content;
 //	printf("*s = %s\n", s);
 //	printf("s = %p\n", s);
 }*/
