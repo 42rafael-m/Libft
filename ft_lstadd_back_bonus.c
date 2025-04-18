@@ -6,11 +6,10 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:31:56 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/17 20:53:54 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/18 18:32:39 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonuslibft.h"
 #include "libft.h"
 /* lst: el puntero al primer nodo de una lista.
 new: el puntero a un nodo que añadir a la lista.

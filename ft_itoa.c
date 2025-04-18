@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 21:06:20 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/18 18:24:01 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	nbr = n;
 	i = 0;
 	neg = ft_neg(nbr);
-	r = (char *)malloc(12 * sizeof(char));
+	r = (char *)ft_calloc(12, sizeof(char));
 	if (!r)
 		return (NULL);
 	if (neg)

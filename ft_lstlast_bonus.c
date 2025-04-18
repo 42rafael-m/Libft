@@ -6,13 +6,12 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:16:12 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/17 20:47:34 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/18 18:33:51 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Devuelve el último nodo de la lista. */
 
-#include "bonuslibft.h"
 #include "libft.h"
 
 //#include <stdio.h>

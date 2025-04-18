@@ -6,15 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:05:46 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/17 20:51:24 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/18 18:49:04 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonuslibft.h"
 #include "libft.h"
 #include <stdlib.h>
-/*#include <stdio.h>
-
+#include <stdio.h>
+/*
 Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’ se
 inicializa con el contenido del parámetro ’content’. La variable ’next’,
 con NULL.
@@ -39,13 +38,13 @@ t_list	*ft_lstnew(void *content)
 /*
 int	main(void)
 {
-	char	*content = NULL;
+//	char	*content = NULL;
 	t_list	*newnode;
-	char	*s;
+//	char	*s;
 
-	printf("content = %p\n", content);
-	newnode = ft_lstnew(content);
-	s = newnode -> content;
-	printf("*s = %s\n", s);
-	printf("s = %p\n", s);
+//	printf("content = %p\n", content);
+	newnode = ft_lstnew(NULL);
+//	s = newnode -> content;
+//	printf("*s = %s\n", s);
+//	printf("s = %p\n", s);
 }*/
