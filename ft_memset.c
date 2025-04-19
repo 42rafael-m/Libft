@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:38:47 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 16:31:26 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:49:59 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 #include <stdlib.h>
 
 
-       The  memset()  function  fills the first n bytes of
-       the memory area pointed to by s with the con‐
-       stant byte c. */
+The  memset()  function  fills the first n bytes of the memory area pointed
+to by s with the constant byte c. */
 
 void	*ft_memset(void *s, int c, size_t n)
 {

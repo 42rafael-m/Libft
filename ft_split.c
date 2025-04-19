@@ -6,14 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:34:44 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 20:22:22 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:52:06 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+//#include <string.h>
+//#include <stdio.h>
 
 static char	*ft_sep_lines(char *str, int depth, char charset)
 {

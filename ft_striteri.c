@@ -6,12 +6,12 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:56:05 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 19:31:50 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:53:59 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-/*
+/*#include <stdio.h>
+
 static void	to_uppercase_i(unsigned int index, char *c)
 {
 	if (*c >= 'a' && *c <= 'z')

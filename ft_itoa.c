@@ -6,14 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 18:24:01 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:43:15 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
+//#include <stdio.h>
+//#include <limits.h>
 /*
 Utilizando malloc(3), genera una string que represente el valor entero recibido
 como argumento. Los números negativos tienen que gestionarse.
@@ -49,6 +49,24 @@ static int	ft_neg(long n)
 	return (0);
 }
 
+static size_t	ft_intlen(int n)
+{
+	size_t	lg;
+
+	lg = 1;
+	if (ft_neg(n))
+	{
+		n = -n;
+		lg++;
+	}
+	while (n > 9)
+	{
+		n = n / 10;
+		lg++;
+	}
+	return (lg);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*r;
@@ -59,7 +77,7 @@ char	*ft_itoa(int n)
 	nbr = n;
 	i = 0;
 	neg = ft_neg(nbr);
-	r = (char *)ft_calloc(12, sizeof(char));
+	r = (char *)ft_calloc(ft_intlen(nbr) + 1, sizeof(char));
 	if (!r)
 		return (NULL);
 	if (neg)
@@ -79,8 +97,9 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	char	*r = ft_itoa("");
+	char	*r = ft_itoa(-2147483648LL);
 	printf("ft = %s\n", r);
+	printf("lg = %zu", ft_strlen(r));
 	free (r);
 }
 */

@@ -6,12 +6,12 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:09:36 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/12 19:41:44 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:51:10 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

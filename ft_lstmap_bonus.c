@@ -6,15 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:08:17 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 22:00:18 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:46:24 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+//#include <string.h>
 /* Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada
  * nodo. Crea una lista resultante de la aplicación correcta y sucesiva de
  * la función ’f’ sobre cada nodo. La función ’del’ se utiliza para

@@ -6,12 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:59:52 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 18:40:58 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:55:43 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 #include <stdlib.h>
 /*#include <stdio.h>
 

@@ -6,16 +6,16 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:12 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 20:21:19 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 14:00:14 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-
+/*
 #include <stdio.h>
 
-/*Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
+Reserva (con malloc(3)) y devuelve una substring de la string ’s’.
 La substring empieza desde el índice ’start’ y tiene una longitud máxima ’len’.
 
 RETURN

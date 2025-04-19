@@ -6,16 +6,16 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:16:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 18:39:33 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 13:59:51 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
-
-#include <stdio.h>
 /*
+#include <stdio.h>
+
 Elimina todos los caracteres de la string ’set’ desde el principio y desde el
 final de ’s1’, hasta encontrar un caracter no perteneciente a ’set’. La string
 resultante se devuelve con una reserva de malloc(3)
