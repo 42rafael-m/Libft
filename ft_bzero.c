@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:38:06 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/16 16:41:34 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 15:49:23 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@
 
 void	*ft_bzero(void *s, size_t n)
 {
-	size_t			i;
 	unsigned char	*d;
 
-	i = 0;
 	d = (unsigned char *)s;
 	ft_memset(d, '\0', n);
 	return (s);

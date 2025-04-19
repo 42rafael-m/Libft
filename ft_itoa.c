@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 13:43:15 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 15:51:07 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	ft_neg(long n)
 	return (0);
 }
 
-static size_t	ft_intlen(int n)
+static size_t	ft_intlen(long n)
 {
 	size_t	lg;
 
