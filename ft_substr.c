@@ -6,11 +6,10 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:12 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 14:00:14 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 16:19:58 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 /*
 #include <stdio.h>
@@ -29,6 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	lg;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	lg = ft_strlen((char *)s);
 	if (start > lg)
 		return (result = ft_calloc(1, 1));

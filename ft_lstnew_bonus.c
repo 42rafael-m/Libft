@@ -6,12 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:05:46 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 19:08:24 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 16:10:39 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 /*#include <stdio.h>
 
 Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’ se

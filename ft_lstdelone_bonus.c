@@ -6,12 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:42:13 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 18:33:22 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 16:09:24 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 /*#include <string.h>
 #include <stdio.h
  * Toma como parámetro un nodo ’lst’ y libera la memoria del contenido

@@ -6,16 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 18:41:52 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/18 18:33:10 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 20:52:40 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-/*
-#include <string.h>
-#include <stdio.h>
 
+#include <stdio.h>
+/*
 Elimina y libera el nodo ’lst’ dado y todos los consecutivos de ese nodo,
 utilizando la función ’del’ y free(3). Al final, el puntero a la lista debe ser
 NULL.*/
@@ -42,16 +40,16 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 int     main(void)
 {
 	int	lg;
-	char *s1 = strdup("Hola");
+	char *s1 = ft_strdup("Hola");
         t_list  *node1;
 	node1 = ft_lstnew(s1);
-        char *s2 = strdup("que");
+        char *s2 = ft_strdup("que");
         t_list  *node2;
 	node2 = ft_lstnew(s2);
-        char *s3 = strdup("tal");
+        char *s3 = ft_strdup("tal");
 	t_list	*node3;
 	node3 = ft_lstnew(s3);
-        char *s4 = strdup("Adios");
+        char *s4 = ft_strdup("Adios");
         t_list  *node4;
 	node4 = ft_lstnew(s4);
 

@@ -6,23 +6,14 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:21:20 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 13:57:22 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/19 16:40:14 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static size_t	ft_strlen(char *str)
-{
-	int	i;
+/*#include <stdio.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-/*
 static char	to_uppercase_i(unsigned int index, char c)
 {
 	if (c >= 'a' && c <= 'z')
