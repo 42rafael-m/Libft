@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:31:56 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 21:59:52 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/04/20 14:10:05 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ new: el puntero a un nodo que añadir a la lista.
 Añade el nodo ’new’ al final de la lista ’lst’.
 */
 //#include <stdio.h>
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
@@ -32,19 +33,19 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			last = last -> next;
 		last -> next = new;
 	}
-	new -> next = NULL;
 }
 /*
 int	main(void)
 {
 	int	lg;
+	t_list	**list = NULL;
 	t_list	*last_node = ft_lstnew("LAST");
 	t_list *node1 = ft_lstnew("Hola");
         t_list *node2 = ft_lstnew("que");
 	t_list *node3 = ft_lstnew("tal");
 	t_list *node4 = ft_lstnew("adios");
 
-	ft_lstadd_back(&node1, node2);
+	ft_lstadd_back(list, node2);
 	ft_lstadd_back(&node2, node3);
 	ft_lstadd_back(&node3, node4);
 	ft_lstadd_back(&node4, last_node);
