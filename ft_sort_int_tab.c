@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 14:13:09 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/21 14:26:08 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
+/* Ordena un array de int en orden ascendente */
 
-int	ft_isascii(int c)
+void	ft_sort_int_tab(int *tab, size_t size)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	while (j < size - 1)
+	{
+		i = 0;
+		while (i < size - j - 1)
+		{
+			if (tab[i + 1] < tab[i])
+				ft_swap(&tab[i], &tab[i + 1]);
+			i++;
+		}
+		j++;
+	}
 }

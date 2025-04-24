@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/22 15:25:19 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/22 15:33:49 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
-
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
-
-int	ft_isascii(int c)
+void	ft_putnbr(int n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	nbr;
+
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write (1, "-", 1);
+		n = -n;
+	}
+	nbr = n;
+	if (nbr > 9)
+		ft_putnbr(n / 10);
+	nbr = (n % 10) + 48;
+	write (1, &nbr, 1);
 }

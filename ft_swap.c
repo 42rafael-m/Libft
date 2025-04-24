@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 14:06:20 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/21 14:07:09 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+/* Intercambia el contenido de dos enteros cuyas direcciones
+se utilicen como parámetro. */
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
-
-int	ft_isascii(int c)
+void	ft_swap(int *a, int *b)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

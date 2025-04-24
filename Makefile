@@ -10,7 +10,14 @@ SRC = ft_atoi.c ft_isascii.c ft_memcmp.c \
       ft_split.c ft_strlcat.c ft_strnstr.c \
       ft_toupper.c ft_isalpha.c ft_memchr.c \
       ft_putchar_fd.c ft_strchr.c ft_strlcpy.c \
-      ft_strrchr.c
+      ft_strrchr.c ft_swap.c ft_rev_int_tab.c\
+      ft_sort_int_tab.c ft_strcpy.c ft_strncpy.c\
+      ft_putstr_non_printable.c ft_putchar.c\
+      ft_strstr.c ft_convert_int.c ft_putnbr_base.c ft_longlen.c\
+      ft_atoi_base.c ft_power.c ft_iterative_factorial.c\
+      ft_fibonacci.c ft_convert_base.c ft_nbr_base_len.c\
+      ft_neg.c ft_putnbr.c
+
 BONUS_SRC = ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstclear_bonus.c\
 	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstnew_bonus.c\
 	ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c

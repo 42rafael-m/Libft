@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 15:09:39 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/22 12:40:59 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
+/* Devuelve el número de dígitos de un long pasado como parámetro. */
 
-int	ft_isascii(int c)
+size_t	ft_longlen(long n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+        size_t	lg;
+
+        lg = 1;
+	if (n < 0)
+	{
+		n = -n;
+		lg++;
+	}
+	while (n > 9)
+	{
+		n = n / 10;
+		lg++;
+	}
+	return (lg);
 }

@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_rev_char_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/22 13:18:24 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/22 13:19:43 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
+/* Revierte el orden de los carácteres de un string */
 
-int	ft_isascii(int c)
+void	ft_rev_char_tab(char *tab)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	t;
+	int	end;
+	int	start;
+
+	end = ft_strlen(tab) - 1;
+	start = 0;
+	while (start < end)
+	{
+		t = tab[start];
+		tab[start] = tab[end];
+		tab[end] = t;
+		++start;
+		--end;
+	}
 }
+

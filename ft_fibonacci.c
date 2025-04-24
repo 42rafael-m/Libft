@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 16:23:04 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/21 16:23:32 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
-
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
-
-int	ft_isascii(int c)
+int	ft_fibonacci(int index)
 {
-	if (c >= 0 && c <= 127)
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
 		return (1);
-	return (0);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 15:28:01 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/21 16:12:29 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+/* Devuelve la el resultado de elevar una base a una potencia (power) */
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
-
-int	ft_isascii(int c)
+int	ft_power(int base, int power)
 {
-	if (c >= 0 && c <= 127)
+	int	result;
+	int	i;
+
+	result = 1;
+	i = 0;
+	if (power == 0)
 		return (1);
-	return (0);
+	if (power < 0)
+		return (0);
+	while (i < power)
+	{
+		result *= base;
+		i++;
+	}
+	return (result);
 }

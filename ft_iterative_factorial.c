@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/21 15:37:35 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/21 15:39:28 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
-
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
-
-int	ft_isascii(int c)
+int	ft_iterative_factorial(int nb)
 {
-	if (c >= 0 && c <= 127)
+	int	result;
+
+	result = 1;
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
 		return (1);
-	return (0);
+	while (nb > 0)
+	{
+		result = result * nb ;
+		nb--;
+	}
+	return (result);
 }

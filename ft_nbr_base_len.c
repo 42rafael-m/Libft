@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_nbr_base_len.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:27:41 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 16:06:41 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/04/22 14:23:39 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/04/22 14:36:52 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
- checks whether c is a 7-bit unsigned char value
- * that fits into the ASCII character set. */
+/* Devuelve el número de carácteres de un int en una base determinada */
 
-int	ft_isascii(int c)
+int	ft_nbr_base_len(long nbr, size_t base_len)
 {
-	if (c >= 0 && c <= 127)
+	int	len;
+
+	len = 0;
+	if (nbr == 0)
 		return (1);
-	return (0);
+	if (nbr < 0)
+	{
+		len++;
+		nbr = -nbr;
+	}
+	while (nbr > 0)
+	{
+		nbr /= base_len;
+		len++;
+	}
+	return (len);
 }
+
