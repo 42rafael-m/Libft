@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rafael-m <rafael-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 20:27:40 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/22 15:26:50 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:54:16 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
-void			ft_swap(int *a, int *b);
+void		ft_swap(int *a, int *b);
 void			ft_rev_int_tab(int *tab, size_t size);
 void			ft_sort_int_tab(int *tab, size_t size);
 
@@ -88,5 +88,6 @@ int		ft_nbr_base_len(long nbr, size_t base_len);
 int		ft_neg(long n);
 void		ft_rev_char_tab(char *tab);
 void		ft_putnbr(int n);
+char    *ft_strndup(const char *src, size_t n);
 
 #endif

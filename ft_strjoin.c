@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rafael-m <rafael-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:59:52 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 16:17:14 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/05/08 11:11:12 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[lg] = '\0';
 	return (result);
 }
-/*
-int	main(void)
-{
-	char	s[] = {'3', 12312312312312123, -1231, 'a', 'b', 'c'};
-	char    s2[] = {99, 120, 49};
-	char	*r;
 
-	r = ft_strjoin(s,s2);
-	printf("ft = %s\n", r);
-}*/
+// int	main(void)
+// {
+// 	char	*s = ft_strdup("HOLA");
+// 	char    *s2 = ft_strdup("QUE TAL");
+// 	char	*r;
+
+// 	r = ft_strjoin("","");
+// 	printf("ft = %s\n", r);
+// 	free (r);
+// }

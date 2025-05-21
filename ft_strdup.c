@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rafael-m <rafael-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 13:40:15 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 16:16:51 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:59:29 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(const char *src)
 	size_t		size;
 
 	size = ft_strlen(src);
-	dest = (char *)malloc((size + 1) * sizeof(char));
+	dest = (char *)ft_calloc((size + 1), sizeof(char));
 	if (!dest)
 		return (NULL);
 	ft_strlcpy(dest, src, size + 1);
