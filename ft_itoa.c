@@ -5,55 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 12:07:49 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/22 13:19:10 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/06/05 12:06:03 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/06/05 12:07:20 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-//#include <stdio.h>
-//#include <limits.h>
-/*
-Utilizando malloc(3), genera una string que represente el valor entero recibido
-como argumento. Los números negativos tienen que gestionarse.
+#include <stdlib.h>
+#include <unistd.h>
+#include <limits.h>
 
-RETURN
-La string que represente el número. NULL si falla la reserva de memoria.
-*/
+size_t	ft_intlen(long n)
+{
+	size_t	len;
+
+	len = 1;
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n > 9)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
-	char	*r;
-	int		i;
-	int		neg;
+	size_t	len;
+	char	*result;
 	long	nbr;
 
-	nbr = n;
-	i = 0;
-	neg = ft_neg(nbr);
-	r = (char *)ft_calloc(ft_longlen(nbr) + 1, sizeof(char));
-	if (!r)
+	nbr = (long)n;
+	len = ft_intlen(n);
+	result = (char *)malloc((len + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
-	if (neg)
+	result[len] = '\0';
+	len--;
+	if (nbr < 0)
+	{
 		nbr = -nbr;
+		result[0] = '-';
+	}
 	while (nbr > 9)
 	{
-		r[i++] = (nbr % 10) + 48;
-		nbr = nbr / 10;
+		result[len] = (nbr % 10) + 48;
+		nbr = nbr / 1;
+		len --;
 	}
-	r[i] = nbr + 48;
-	if (neg)
-		r[++i] = '-';
-	r[++i] = '\0';
-	ft_rev_char_tab(r);
-	return (r);
+	result[len] = nbr + 48;
+	return (result);
 }
-/*
-int	main(void)
-{
-	char	*r = ft_itoa(-2147483648LL);
-	printf("ft = %s\n", r);
-	printf("lg = %zu", ft_strlen(r));
-	free (r);
-}
-*/

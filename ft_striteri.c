@@ -6,11 +6,11 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 13:56:05 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/19 13:53:59 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/05/27 16:20:51 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 
 static void	to_uppercase_i(unsigned int index, char *c)
 {
@@ -36,6 +36,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 int	main(void)
 {
 	char	s[] = "asdsad";
+
 	ft_striteri(s, to_uppercase_i);
 	printf("ft_striteri = %s\n", s);
 }

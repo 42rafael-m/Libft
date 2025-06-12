@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_longlen.c                                       :+:      :+:    :+:   */
+/*   ft_free_d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rafael-m <rafael-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 15:09:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/06/05 12:05:36 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/06/02 18:07:55 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/06/03 18:40:03 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Devuelve el número de dígitos de un long pasado como parámetro. */
-
-size_t	ft_longlen(long n)
+void	ft_free_d(char	**ptr)
 {
-	size_t	lg;
+	int	i;
 
-	lg = 1;
-	if (n < 0)
+	i = 0;
+	if (!ptr)
+		return ;
+	while (ptr[i])
 	{
-		n = -n;
-		lg++;
+		free (ptr[i]);
+		*ptr = NULL;
+		i++;
 	}
-	while (n > 9)
-	{
-		n = n / 10;
-		lg++;
-	}
-	return (lg);
+	free (ptr);
+	ptr = NULL;
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:45:33 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/04/21 14:59:23 by rafael-m         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:11:46 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,14 @@ void	ft_putstr_non_printable(char *str)
 	while (*str)
 	{
 		c = (unsigned char)*str;
-		if (*str < 32 || *str == 127)
+		if (c < 32 || c == 127)
 		{
 			write(1, "\\", 1);
-			ft_putchar(hex[(*str / 16)]);
-			ft_putchar(hex[(*str % 16)]);
+			ft_putchar(hex[(c / 16)]);
+			ft_putchar(hex[(c % 16)]);
 		}
 		else
 			write(1, str, 1);
 		str++;
 	}
 }
-

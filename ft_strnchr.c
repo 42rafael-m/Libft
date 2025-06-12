@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbr_base_len.c                                  :+:      :+:    :+:   */
+/*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 14:23:39 by rafael-m          #+#    #+#             */
-/*   Updated: 2025/06/05 12:05:10 by rafael-m         ###   ########.fr       */
+/*   Created: 2025/06/09 13:32:44 by rafael-m          #+#    #+#             */
+/*   Updated: 2025/06/09 13:33:22 by rafael-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Devuelve el número de carácteres de un int en una base determinada */
-
-int	ft_nbr_base_len(long nbr, size_t base_len)
+char	*ft_strnchr(const char *s, int c, unsigned int n)
 {
-	int	len;
+	unsigned int	i;
 
-	len = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
+	i = 0;
+	if (!s || !n)
 	{
-		len++;
-		nbr = -nbr;
+		return (NULL);
 	}
-	while (nbr > 0)
+	while (s[i] && i < n)
 	{
-		nbr /= base_len;
-		len++;
+		if ((unsigned char)c == s[i])
+			return ((char *)&s[i]);
+		i++;
 	}
-	return (len);
+	if (i < n && (unsigned char)c == s[i])
+		return ((char *)&s[i]);
+	return (NULL);
 }
